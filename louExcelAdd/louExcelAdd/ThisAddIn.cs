@@ -11,8 +11,11 @@ namespace louExcelAdd
 {
     public partial class ThisAddIn
     {
+        //声明一个Excel引用程序对象
+        Excel.Application ExcelApp;
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
+            ExcelApp = Globals.ThisAddIn.Application;
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
