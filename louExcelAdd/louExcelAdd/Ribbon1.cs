@@ -26,7 +26,12 @@ namespace louExcelAdd
         private void button2_Click(object sender, RibbonControlEventArgs e)
         {
             ExcelApp= Globals.ThisAddIn.Application;
-            ExcelApp.ActiveCell.Value ="111";
+            Excel.Worksheet sh = ExcelApp.ActiveWorkbook.ActiveSheet;
+            Excel.Range rr=sh.Application.Selection;
+            Excel.Range aa=sh.Application.Intersect(sh.Range["a1:c10"],sh.Range["b1:c10"]);
+            Excel.Range r = (Globals.ThisAddIn.Application.ActiveCell as Excel.Range).CurrentRegion;
+            //rr.Interior.Color = 0x0000ff;
+            aa.Interior.Color = 0x0000ff;
         }
     }
 }
